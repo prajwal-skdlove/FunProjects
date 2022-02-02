@@ -3,7 +3,7 @@ function_wordle <- function(n,e,is,ns){
   library(data.table)
   library(qdapDictionaries)
   
-  # Create a list of n letter word to figure out
+  # Create a list of n letter words
   prm = rbind(data.table(DICTIONARY)[,1], data.table(word = GradyAugmented))
   prm = prm[nchar(word) == n]
   prm = unique(prm, by = "word")
