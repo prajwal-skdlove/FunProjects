@@ -1,6 +1,7 @@
 library(data.table)
 library(qdapDictionaries)
 
+
 # Get a list of acceptable words
 # For this grab a dictionary for all 5 letter words
 n = 5
@@ -14,8 +15,9 @@ function_wordle <- function(df,e,is,ns){
 
   
   # Exclude letters not in the word
-  ptrn_excl = paste0(e, collapse="|")
-  df = df[!grepl(ptrn_excl, word, perl = TRUE)]
+  if (length(e) > 0) {
+    ptrn_excl = paste0(e, collapse="|")
+    df = df[!grepl(ptrn_excl, word, perl = TRUE)]}
   
   # Keep words with letters already guessed in only the right spot
   is1 = is[!(is.na(is))]
@@ -51,6 +53,7 @@ function_wordle <- function(df,e,is,ns){
 
   return(df)
 }
+
 
 excl = c("r","i", "n", "e", "u", "d") #letters that aren't in
 in_seq = c("a","l","o",NA, NA) #letters in the right spot
