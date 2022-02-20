@@ -1,8 +1,4 @@
 # Basically a copy of Wordle. Picks a word and guesses it at random
-# Uses the wordle helper function
-
-# Basically a copy of Wordle. Picks a word and guesses it at random
-# Uses the Wordle helper function
 
 
 # Function to help solve wordle
@@ -161,10 +157,12 @@ prm = data.table(cbind(word = prm$word,
                                       simplify = TRUE,
                                       USE.NAMES = TRUE)))
 
+
+# This actually picks a word and guesses it
 # Run the Code 500 time
 replicate(500,word_guess(prm))
 
-# Use this for helper to solve Wordle 
+# Use this for helper to solve daily Wordle
 wordle_list = prm
 excl = c( "h", "o", "k", "e","i", "a", "r", "s",  "w", "n") 
 in_seq = c("c", "l" ,NA,"m" , NA)
