@@ -19,7 +19,7 @@ app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 
 @app.route('/get_rates', methods=['POST'])
-def calculate_monthly_payment():
+def get_rate():
     data = request.get_json()
 
     # Check if all required parameters are present
