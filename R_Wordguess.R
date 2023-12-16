@@ -1,4 +1,4 @@
-# Basically a copy of Wordle. Picks a word and guesses it at random
+# Basically a copy of Wordle. Picks a word and guesses the word at random
 
 
 # Function to help solve wordle
